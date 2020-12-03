@@ -7,7 +7,7 @@
     </head>
 
     <body>
-        <form>
+        <form method="POST" action="../controller/controllerCidade.php">
             <div>
                 <label for="nome">Cidade</label>
                 <input type="text" name="nome" required/>
@@ -31,6 +31,9 @@
             <div>
                 <input type="submit" value="Cadastrar"/>
                 <input type="reset" value="Limpar"/>
+            </div>
+            <div>
+                <input type="hidden" name="opcao" value="1"/>
             </div>
         </form>
     </body>

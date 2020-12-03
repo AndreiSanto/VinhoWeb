@@ -7,8 +7,7 @@ class Cidade{
         private $valor_Frete;
         private $peso;
 
-        public function Cidade($id,$nome,$estado,$cep,$valorFrete,$peso){
-            $this->id_cidade=$id;
+        public function Cidade($nome, $estado, $cep, $valorFrete, $peso){
             $this->nome=$nome;
             $this->estado = $estado;
             $this->CEP=$cep;
