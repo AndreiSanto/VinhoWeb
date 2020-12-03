@@ -32,5 +32,33 @@
 
             return $lista;
         }
+
+        public function deleteCidade($id){
+            $rs = $this->con->prepare("DELETE FROM cidades WHERE id_cidade = :id");
+            $rs->bindValue(":id", $id);
+            $rs->execute();
+        }
+
+        public function getCidade($id){
+            $rs = $this->con->prepare("SELECT * FROM cidades WHERE id_cidade = :id");
+            $rs->bindValue(":id", $id);
+            $rs->execute();
+            $cidade = $rs->fetch(PDO::FETCH_OBJ);
+            return $cidade;
+        }
+
+        public function updateCidade(Cidade $cidade, $id){
+            $rs = $this->con->prepare("UPDATE cidades SET cidade = :nomeCidade, estado = :estado,
+                                       CEP = :CEP, valorfrete_porPeso = :valorFrete, peso = :peso 
+                                       WHERE id_cidade = :id");
+                                       
+            $rs->bindValue(":nomeCidade", $cidade->getNomeCidade());
+            $rs->bindValue(":estado", $cidade->getEstado());
+            $rs->bindValue(":CEP", $cidade->getcep());
+            $rs->bindValue(":valorFrete", $cidade->getValorFrete());
+            $rs->bindValue(":peso", $cidade->getPeso());
+            $rs->bindValue(":id", $id);
+            $rs->execute();
+        }
     }
 ?>

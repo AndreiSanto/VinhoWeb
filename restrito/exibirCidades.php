@@ -33,8 +33,8 @@
                         echo "<td>".$cidade->CEP."</td>";
                         echo "<td>".$cidade->valorfrete_porPeso."</td>";
                         echo "<td>".$cidade->peso."</td>";
-                        echo "<td><a href='#'>Editar</a>&nbsp";
-                        echo "<a href='#'>Excluir</a></td>";
+                        echo "<td><a href='../controller/controllerCidade.php?opcao=4&id=".$cidade->id_cidade."'>Editar</a>&nbsp";
+                        echo "<a href='../controller/controllerCidade.php?opcao=3&id=".$cidade->id_cidade."'>Excluir</a></td>";
                         echo "</tr>";
                     }
                 ?>
