@@ -32,6 +32,7 @@
                 <input type="submit" value="Cadastrar"/>
                 <input type="reset" value="Limpar"/>
             </div>
+            <a href='../controller/controllerCidade.php?opcao=2'>Exibir Cidades</a>
             <div>
                 <input type="hidden" name="opcao" value="1"/>
             </div>

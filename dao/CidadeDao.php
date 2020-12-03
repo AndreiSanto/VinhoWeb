@@ -20,5 +20,17 @@
             $rs->bindValue(":peso", $cidade->getPeso());
             $rs->execute();
         }
+
+        public function getCidades(){
+            $rs = $this->con->query("SELECT * FROM cidades");
+            
+            $lista = array();
+
+            while($cidade = $rs->fetch(PDO::FETCH_OBJ)){
+                $lista[] = $cidade;
+            }
+
+            return $lista;
+        }
     }
 ?>
