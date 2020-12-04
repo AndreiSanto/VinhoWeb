@@ -1,5 +1,6 @@
 <?php
     include_once "../dao/cidadeDao.php";
+    include_once "../dao/clienteDao.php";
     include_once "../model/Cidade.php";
 
     $opcao = (int)$_REQUEST["opcao"];
@@ -17,15 +18,24 @@
     }
     
     else if($opcao == 2){
+
         $listaCidades = $cidadeDao->getCidades(); 
         session_start();
         $_SESSION["listaCidades"] = $listaCidades;
-        header("location: ../restrito/exibirCidades.php");
+
+        if(!isset($_SESSION["listaCidades"]) || sizeof($_SESSION["listaCidades"]) == 0){
+            header("location: ../restrito/noCity.php");
+        }
+        else{
+            header("location: ../restrito/exibirCidades.php");
+        }
     }
 
     else if($opcao == 3){
         $id = $_REQUEST["id"];
         $cidadeDao->deleteCidade($id);
+        $clienteDao = new ClienteDao();
+        $clienteDao->deleteClienteCidade($id);
         header("location: controllerCidade.php?opcao=2");
     }
 

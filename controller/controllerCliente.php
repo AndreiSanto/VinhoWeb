@@ -13,7 +13,12 @@
 
         session_start();
         $_SESSION["cidades"] = $lista;
-        header("location: ../restrito/formCliente.php");
+        if(!isset($_SESSION["cidades"]) || sizeof($_SESSION["cidades"]) == 0){
+            header("location: ../restrito/noCity.php");
+        }
+        else{
+            header("location: ../restrito/formCliente.php");
+        }
     }
 
     else if($opcao == 2){
@@ -31,7 +36,13 @@
         $listaClientes = $clienteDao->getClientes();
         session_start();
         $_SESSION["clientes"] = $listaClientes;
-        header("location: ../restrito/exibirClientes.php");
+
+        if(!isset($_SESSION["clientes"]) || sizeof($_SESSION["clientes"]) == 0){
+            header("location: ../restrito/noUser.php");
+        }
+        else{
+            header("location: ../restrito/exibirClientes.php");
+        }
     }
 
     else if ($opcao == 4){

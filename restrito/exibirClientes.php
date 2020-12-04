@@ -31,7 +31,7 @@
                         echo "<td>".$cliente->nome."</td>";
                         echo "<td>".$cliente->cnpj."</td>";
                         echo "<td>".$cliente->endereco."</td>";
-                        echo "<td>".$cidadeDao->getNomeCidade($cliente->id_cidade)."</td>";
+                        echo "<td>". $cidadeDao->getNomeCidade($cliente->id_cidade) ."</td>";
                         echo "<td><a href='../controller/controllerCliente.php?opcao=5&id=".$cliente->id_cliente."'>Editar</a>&nbsp";
                         echo "<a href='../controller/controllerCliente.php?opcao=4&id=".$cliente->id_cliente."'>Excluir</a></td>";
                         echo "</tr>";

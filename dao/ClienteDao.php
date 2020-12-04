@@ -34,6 +34,12 @@
             $rs->execute();
         }
 
+        public function deleteClienteCidade($id){
+            $rs = $this->con->prepare("DELETE FROM clientes WHERE id_cidade = :id");
+            $rs->bindValue(":id", $id);
+            $rs->execute();
+        }
+
         public function getCliente($id){
             $rs = $this->con->prepare("SELECT * FROM clientes WHERE id_cliente = :id");
             $rs->bindValue(":id", $id);

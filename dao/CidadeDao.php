@@ -51,8 +51,8 @@
             $rs = $this->con->prepare("SELECT * FROM cidades WHERE id_cidade = :id");
             $rs->bindValue(":id", $id);
             $rs->execute();
-            $cidade = $rs->fetch(PDO::FETCH_OBJ);
-            return $cidade->cidade;
+            $registro = $rs->fetch(PDO::FETCH_OBJ);
+            return $registro->cidade;
         }
 
         public function updateCidade(Cidade $cidade, $id){
