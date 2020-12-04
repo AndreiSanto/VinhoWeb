@@ -47,6 +47,14 @@
             return $cidade;
         }
 
+        public function getNomeCidade($id){
+            $rs = $this->con->prepare("SELECT * FROM cidades WHERE id_cidade = :id");
+            $rs->bindValue(":id", $id);
+            $rs->execute();
+            $cidade = $rs->fetch(PDO::FETCH_OBJ);
+            return $cidade->cidade;
+        }
+
         public function updateCidade(Cidade $cidade, $id){
             $rs = $this->con->prepare("UPDATE cidades SET cidade = :nomeCidade, estado = :estado,
                                        CEP = :CEP, valorfrete_porPeso = :valorFrete, peso = :peso 

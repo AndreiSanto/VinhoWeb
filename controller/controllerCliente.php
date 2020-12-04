@@ -24,5 +24,39 @@
 
         $cliente = new Cliente($nomeCliente, $CNPJCliente, $enderecoCliente, $idCidadeCliente);
         $clienteDao->insertCliente($cliente);
+        header("location: controllerCliente.php?opcao=3");
+    }
+
+    else if($opcao == 3){
+        $listaClientes = $clienteDao->getClientes();
+        session_start();
+        $_SESSION["clientes"] = $listaClientes;
+        header("location: ../restrito/exibirClientes.php");
+    }
+
+    else if ($opcao == 4){
+        $id = $_REQUEST["id"];
+        $clienteDao->deleteCliente($id);
+        header("location: controllerCliente.php?opcao=3");
+    }
+
+    else if ($opcao == 5){
+        $id = $_REQUEST["id"];
+        $cliente = $clienteDao->getCliente($id);
+        session_start();
+        $_SESSION["cliente"] = $cliente;
+        header("location: ../restrito/formUpdateCliente.php");
+    }
+
+    else if ($opcao == 6){
+        $nomeCliente = $_REQUEST["nomeCliente"];
+        $CNPJCliente = $_REQUEST["CNPJCliente"];
+        $enderecoCliente = $_REQUEST["enderecoCliente"];
+        $idCidadeCliente = $_REQUEST["cidadeCliente"];
+        $id = $_REQUEST["id"];
+
+        $cliente = new Cliente($nomeCliente, $CNPJCliente, $enderecoCliente, $idCidadeCliente);
+        $clienteDao->updateCliente($cliente, $id);
+        header("location: controllerCliente.php?opcao=3");
     }
 ?>

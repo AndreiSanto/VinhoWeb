@@ -1,6 +1,7 @@
 <?php
     session_start();
     $cidades = $_SESSION["cidades"];
+    $cliente = $_SESSION["cliente"];
 ?>
 
 <!DOCTYPE html>
@@ -15,15 +16,15 @@
         <form method="POST" action="../controller/controllerCliente.php">
             <div>
                 <label for="nomeCliente">Nome</label>
-                <input type="text" name="nomeCliente" required/>
+                <input type="text" name="nomeCliente" value="<?php echo $cliente->nome ?>" required/>
             </div>
             <div>
                 <label for="CNPJCliente">CNPJ</label>
-                <input type="text" name="CNPJCliente" required/>
+                <input type="text" name="CNPJCliente" value="<?php echo $cliente->cnpj ?>" required/>
             </div>
             <div>
                 <label for="enderecoCliente">endereço</label>
-                <input type="text" name="enderecoCliente" required/>
+                <input type="text" name="enderecoCliente" value="<?php echo $cliente->endereco ?>" required/>
             </div>
             <div>
                 <label for="cidadeCliente">Cidade:</label>
@@ -36,12 +37,13 @@
                 </select>
             </div>
             <div>
-                <input type="submit" value="Cadastrar"/>
+                <input type="submit" value="Editar"/>
                 <input type="reset" value="Limpar"/>
             </div>
             <a href="../controller/controllerCliente.php?opcao=3">Exibir Clientes</a>
             <div>
-                <input type="hidden" name="opcao" value="2"/>
+                <input type="hidden" name="opcao" value="6"/>
+                <input type="hidden" name="id" value="<?php echo $cliente->id_cliente ?>"/>
             </div>
         </form>
     </body>
