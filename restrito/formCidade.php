@@ -33,6 +33,7 @@
                 <input type="reset" value="Limpar"/>
             </div>
             <a href='../controller/controllerCidade.php?opcao=2'>Exibir Cidades</a>
+            <a href='../controller/controllerCliente.php?opcao=1'>Cadastrar cliente</a>
             <div>
                 <input type="hidden" name="opcao" value="1"/>
             </div>
