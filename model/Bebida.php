@@ -38,6 +38,9 @@
        public function getFabricante(){
         return $this->fabricante;
        }
+       public function getVolume(){
+           return $this->volume;
+       }
 
     }
 ?>
