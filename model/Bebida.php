@@ -1,5 +1,5 @@
 <?php
-    class Bebidas
+    class Bebida
     {
         public $id_bebida;
         public $nome;
@@ -9,12 +9,11 @@
         public $qde_estoque;
         public $fabricante;
 
-        public function Bebidas($no,$vo,$pre,$pe,$qtd,$fabr){
+        public function Bebida($no,$vo,$pre,$pe,$qtd,$fabr){
             $this->nome=$no;
             $this->volume=$vo;
             $this->preco=$pre;
             $this->peso=$pe;
-            $this->nome=$no;
             $this->qde_estoque=$qtd;
             $this->fabricante=$fabr;
        }
@@ -40,6 +39,10 @@
        }
        public function getVolume(){
            return $this->volume;
+       }
+
+       public function setId($id){
+           $this->id_bebida = $id;
        }
 
     }

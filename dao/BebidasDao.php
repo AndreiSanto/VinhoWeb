@@ -15,10 +15,11 @@
         $rs->bindValue(4,$bebida->getPeso());
         $rs->bindValue(5,$bebida->getQtdEstoque());
         $rs->bindValue(6,$bebida->getFabricante());
+        $rs->execute();
      }
 
      public function deletarBebida($id){
-        $rs = $this->con->prepare("DELETE FROM bebidas WHERE id_bebidas = :?");
+        $rs = $this->con->prepare("DELETE FROM bebidas WHERE id_bebida = ?");
         $rs->bindValue(1, $id);
         $rs->execute();
      }
@@ -31,6 +32,7 @@
         $rs->bindValue(5,$bebida->getQtdEstoque());
         $rs->bindValue(6,$bebida->getFabricante());
         $rs->bindValue(7,$bebida->getId_Bebida()); 
+        $rs->execute();
      }
      public function getBebidas(){
         $rs = $this->con->query("SELECT * FROM bebidas");
@@ -39,7 +41,14 @@
             $lista[] = $bebida;
         }
         return $lista;
+     }
 
+     public function getBebida($id){
+         $rs = $this->con->prepare("SELECT * FROM bebidas WHERE id_bebida = ?");
+         $rs->bindValue(1, $id);
+         $rs->execute();
+         $bebida = $rs->fetch(PDO::FETCH_OBJ);
+         return $bebida;
      }
  } 
  
