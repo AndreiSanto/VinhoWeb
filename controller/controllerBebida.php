@@ -22,8 +22,12 @@
        $listaBebidas = $bebidasDao->getBebidas();
        session_start();
        $_SESSION["bebidas"] = $listaBebidas;
+       if(!isset($_SESSION["bebidas"]) || sizeof($_SESSION["bebidas"]) == 0){
+        header("location: ../restrito/noBeverage.php");
+    }else{
        header("location: ../restrito/exibirBebidas.php"); 
     }
+}
 
     else if($opcao == 3){
         $id = $_REQUEST["id"];
@@ -53,4 +57,3 @@
         $bebidasDao->updateBebida($bebida);
         header("location: ../controller/controllerBebida.php?opcao=2");
     }
-?>
