@@ -50,6 +50,12 @@
          $bebida = $rs->fetch(PDO::FETCH_OBJ);
          return $bebida;
      }
- } 
  
+ public function ultimoRegistro()
+ {
+     $rs = $this->con->query("SELECT MAX(id_bebida) as total from bebidas");
+     $row = $rs->fetch(PDO::FETCH_OBJ);
+     return $row;
+ }
+}
  ?>
