@@ -23,9 +23,9 @@
        session_start();
        $_SESSION["bebidas"] = $listaBebidas;
        if(!isset($_SESSION["bebidas"]) || sizeof($_SESSION["bebidas"]) == 0){
-        header("location: ../restrito/noBeverage.php");
+        header("location: ../restrito/admin/noBeverage.php");
     }else{
-       header("location: ../restrito/exibirBebidas.php"); 
+       header("location: ../restrito/admin/exibirBebidas.php"); 
     }
 }
 
@@ -40,7 +40,7 @@
         $bebida = $bebidasDao->getBebida($id);
         session_start();
         $_SESSION["bebida"] = $bebida;
-        header("location: ../restrito/formUpdateBebida.php");
+        header("location: ../restrito/admin/formUpdateBebida.php");
     }
 
     else if ($opcao == 5){

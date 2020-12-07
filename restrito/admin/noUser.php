@@ -8,7 +8,7 @@
         <div align="center">
             <h1>AVISO</h1>
             <p><font color="red">Nenhum usuario cadastrado.</font></p>
-            <a href="../controller/controllerCliente.php?opcao=1">Cadastrar usuario</a>
+            <a href="../../controller/controllerCliente.php?opcao=1">Cadastrar usuario</a>
         </div>
     </body>
 </html>

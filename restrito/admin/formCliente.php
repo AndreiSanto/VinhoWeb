@@ -1,7 +1,6 @@
 <?php
     session_start();
     $cidades = $_SESSION["cidades"];
-    $cliente = $_SESSION["cliente"];
 ?>
 
 <!DOCTYPE html>
@@ -13,18 +12,18 @@
     </head>
 
     <body>
-        <form method="POST" action="../controller/controllerCliente.php">
+        <form method="POST" action="../../controller/controllerCliente.php">
             <div>
                 <label for="nomeCliente">Nome</label>
-                <input type="text" name="nomeCliente" value="<?php echo $cliente->nome ?>" required/>
+                <input type="text" name="nomeCliente" required/>
             </div>
             <div>
                 <label for="CNPJCliente">CNPJ</label>
-                <input type="text" name="CNPJCliente" value="<?php echo $cliente->cnpj ?>" required/>
+                <input type="text" name="CNPJCliente" required/>
             </div>
             <div>
                 <label for="enderecoCliente">endereço</label>
-                <input type="text" name="enderecoCliente" value="<?php echo $cliente->endereco ?>" required/>
+                <input type="text" name="enderecoCliente" required/>
             </div>
             <div>
                 <label for="cidadeCliente">Cidade:</label>
@@ -37,13 +36,12 @@
                 </select>
             </div>
             <div>
-                <input type="submit" value="Editar"/>
+                <input type="submit" value="Cadastrar"/>
                 <input type="reset" value="Limpar"/>
             </div>
-            <a href="../controller/controllerCliente.php?opcao=3">Exibir Clientes</a>
+            <a href="../../controller/controllerCliente.php?opcao=3">Exibir Clientes</a>
             <div>
-                <input type="hidden" name="opcao" value="6"/>
-                <input type="hidden" name="id" value="<?php echo $cliente->id_cliente ?>"/>
+                <input type="hidden" name="opcao" value="2"/>
             </div>
         </form>
     </body>

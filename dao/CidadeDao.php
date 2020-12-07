@@ -1,6 +1,5 @@
 <?php
     include_once "conexao.php";
-    include_once "../model/Cidade.php";
 
     class CidadeDao{
         private $con;

@@ -6,7 +6,7 @@
     <title>Cadastro  de bebida</title>
 </head>
 <body>
-    <form action="../controller/controllerBebida.php" method="POST">
+    <form action="../../controller/controllerBebida.php" method="POST">
         <div>
             <label for="descricao">Descricao</label>
             <input type="text" name="descricao"/>

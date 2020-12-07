@@ -14,10 +14,10 @@
         session_start();
         $_SESSION["cidades"] = $lista;
         if(!isset($_SESSION["cidades"]) || sizeof($_SESSION["cidades"]) == 0){
-            header("location: ../restrito/noCity.php");
+            header("location: ../restrito/admin/noCity.php");
         }
         else{
-            header("location: ../restrito/formCliente.php");
+            header("location: ../restrito/admin/formCliente.php");
         }
     }
 
@@ -38,10 +38,10 @@
         $_SESSION["clientes"] = $listaClientes;
 
         if(!isset($_SESSION["clientes"]) || sizeof($_SESSION["clientes"]) == 0){
-            header("location: ../restrito/noUser.php");
+            header("location: ../restrito/admin/noUser.php");
         }
         else{
-            header("location: ../restrito/exibirClientes.php");
+            header("location: ../restrito/admin/exibirClientes.php");
         }
     }
 
@@ -56,7 +56,7 @@
         $cliente = $clienteDao->getCliente($id);
         session_start();
         $_SESSION["cliente"] = $cliente;
-        header("location: ../restrito/formUpdateCliente.php");
+        header("location: ../restrito/admin/formUpdateCliente.php");
     }
 
     else if ($opcao == 6){

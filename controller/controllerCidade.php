@@ -24,10 +24,10 @@
         $_SESSION["listaCidades"] = $listaCidades;
 
         if(!isset($_SESSION["listaCidades"]) || sizeof($_SESSION["listaCidades"]) == 0){
-            header("location: ../restrito/noCity.php");
+            header("location: ../restrito/admin/noCity.php");
         }
         else{
-            header("location: ../restrito/exibirCidades.php");
+            header("location: ../restrito/admin/exibirCidades.php");
         }
     }
 
@@ -44,7 +44,7 @@
         $cidade = $cidadeDao->getCidade($id);
         session_start();
         $_SESSION["cidade"] = $cidade;
-        header("location: ../restrito/formUpdateCidade.php");
+        header("location: ../restrito/admin/formUpdateCidade.php");
     }
 
     else if($opcao == 5){

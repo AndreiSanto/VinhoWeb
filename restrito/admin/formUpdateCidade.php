@@ -12,7 +12,7 @@
     </head>
 
     <body>
-        <form method="POST" action="../controller/controllerCidade.php">
+        <form method="POST" action="../../controller/controllerCidade.php">
             <div>
                 <label for="nome">Cidade</label>
                 <input type="text" name="nome" value="<?php echo $cidade->cidade ?>" required/>
@@ -37,7 +37,7 @@
                 <input type="submit" value="Editar"/>
                 <input type="reset" value="Limpar"/>
             </div>
-            <a href='../controller/controllerCidade.php?opcao=2'>Exibir Cidades</a>
+            <a href='../../controller/controllerCidade.php?opcao=2'>Exibir Cidades</a>
             <div>
                 <input type="hidden" name="opcao" value="5"/>
                 <input type="hidden" name="id" value="<?php echo $cidade->id_cidade ?>"/>

@@ -35,8 +35,8 @@
                         echo "<td>".$bebida->peso."</td>";
                         echo "<td>".$bebida->qde_estoque."</td>";
                         echo "<td>".$bebida->fabricante."</td>";
-                        echo "<td><a href='../controller/controllerBebida.php?opcao=4&id=".$bebida->id_bebida."'>Editar</a>&nbsp";
-                        echo "<a href='../controller/controllerBebida.php?opcao=3&id=".$bebida->id_bebida."'>Excluir</a></td>";
+                        echo "<td><a href='../../controller/controllerBebida.php?opcao=4&id=".$bebida->id_bebida."'>Editar</a>&nbsp";
+                        echo "<a href='../../controller/controllerBebida.php?opcao=3&id=".$bebida->id_bebida."'>Excluir</a></td>";
                         echo "</tr>";
                     }
                 ?>
