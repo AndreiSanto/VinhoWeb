@@ -5,6 +5,7 @@
     $bebidasDao = new BebidasDao();
 
     if($opcao == 1){
+        $dupl;
         $id = $_REQUEST["id"];
         $bebida = $bebidasDao->getBebida($id);
         session_start();
@@ -13,9 +14,22 @@
         }else{
             $carrinho = $_SESSION["carrinho"];
         }
-        $carrinho[] = $bebida;
-        $_SESSION["carrinho"] = $carrinho;
-        header("location: ../restrito/exibirCarrinho.php");
+        foreach($carrinho as $registro){
+            if($registro->id_bebida == $id){
+                $dupl = true;
+                break;
+            }else{
+                $dupl = false;
+            }
+        }
+
+        if($dupl == false){
+            $carrinho[] = $bebida;
+            $_SESSION["carrinho"] = $carrinho;
+            header("location: ../restrito/exibirCarrinho.php");
+        }else{
+            header("location: ../restrito/exibirCarrinho.php");
+        }
     }
 
     else if($opcao == 2){
