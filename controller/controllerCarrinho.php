@@ -1,0 +1,41 @@
+<?php
+    include_once "../dao/BebidasDao.php";
+
+    $opcao = (int)$_REQUEST["opcao"];
+    $bebidasDao = new BebidasDao();
+
+    if($opcao == 1){
+        $id = $_REQUEST["id"];
+        $bebida = $bebidasDao->getBebida($id);
+        session_start();
+        if(!isset($_SESSION["carrinho"])){
+            $carrinho = array();
+        }else{
+            $carrinho = $_SESSION["carrinho"];
+        }
+        $carrinho[] = $bebida;
+        $_SESSION["carrinho"] = $carrinho;
+        header("location: ../restrito/exibirCarrinho.php");
+    }
+
+    else if($opcao == 2){
+        session_start();
+        $indice = $_REQUEST["indice"];
+        $carrinho = $_SESSION["carrinho"];
+        unset($carrinho[$indice - 1]);
+        sort($carrinho);
+        $_SESSION["carrinho"] = $carrinho;
+        header("location: ../controller/controllerCarrinho.php?opcao=3");
+    }
+
+    else if($opcao == 3){
+        session_start();
+
+        if(!isset($_SESSION["carrinho"]) || sizeof($_SESSION["carrinho"]) == 0){
+            header("location: ../restrito/carrinhoVazio.php");
+        }
+        else{
+            header("location: ../restrito/exibirCarrinho.php");
+        }
+    }
+?>
