@@ -25,8 +25,10 @@
             </tr>
                 <?php
                     $cont = 0;
+                    $soma = 0;
                     foreach($carrinho as $bebida){
                         $cont++;
+                        $soma = $soma + $bebida->preco; 
                         echo "<tr>";
                         echo "<td>".$cont."</td>";
                         echo "<td>".$bebida->id_bebida."</td>";
@@ -36,7 +38,11 @@
                         echo "<td>".$bebida->fabricante."</td>";
                         echo "<td><a href='../controller/controllerCarrinho.php?opcao=2&indice=".$cont."'>remover</a></td>";
                         echo "</tr>";
+                        
                     }
+                    echo "<tr>";
+                    echo "<td colspan='7' align='center'>Total: ".$soma."</td>";
+                    echo "</tr>";
                 ?>
         </table>
         <a href="../controller/controllerOfertas.php?opcao=1">Continuar Comprando</a>

@@ -26,6 +26,7 @@
         if($dupl == false){
             $carrinho[] = $bebida;
             $_SESSION["carrinho"] = $carrinho;
+            $_SESSION["qtd"] = $qtd;
             header("location: ../restrito/exibirCarrinho.php");
         }else{
             header("location: ../restrito/exibirCarrinho.php");

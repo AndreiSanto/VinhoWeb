@@ -33,7 +33,12 @@
                 echo "<tr>";
                 echo"<td>".$bebida->fabricante."</td>";
                 echo "</tr>";
-                echo "<td><a href='../controller/controllerCarrinho.php?opcao=1&id=".$bebida->id_bebida."'>Adicionar ao carrinho</a></td>";
+                echo "<td><form method='POST' action='../controller/controllerCarrinho.php'>
+                Quantidade: <input type='number' name='qtd' required>
+                <input type='submit' value='Adicionar ao carrinho'>
+                <input type='hidden' name='id' value='".$bebida->id_bebida."'>
+                <input type='hidden' name='opcao' value='1'>
+                </form></td>";
                 echo "<tr>";
                 echo "</tr>";
                 echo "</table>
