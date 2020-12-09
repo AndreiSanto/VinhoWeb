@@ -22,6 +22,15 @@
 <body>
     <p>Nome do cliente: <?php echo $clienteDao->getCliente($idCLiente)->nome ?></p>
     <p>Valor total da compra: <?php echo $valorTotal ?></p>
-    <a href="#">GERAR BOLETO</a>
+    <form action="boleto/meuBoleto.php" method="POST">
+        <input type="hidden" name="bNome" value="<?php echo $clienteDao->getCliente($idCLiente)->nome?>"/>
+        <input type="hidden" name="bCnpj" value="<?php echo $clienteDao->getCliente($idCLiente)->cnpj?>"/>
+        <input type="hidden" name="bEndereco" value="<?php echo $clienteDao->getCliente($idCLiente)->endereco?>"/>
+        <input type="hidden" name="bCep" value="<?php echo $cidadeDao->getCidade($idCidade)->CEP?>"/>
+        <input type="hidden" name="bEstado" value="<?php echo $cidadeDao->getCidade($idCidade)->estado?>"/>
+        <input type="hidden" name="bCidade" value="<?php echo $cidadeDao->getCidade($idCidade)->cidade?>"/>
+        <input type="hidden" name="total" value="<?php echo $valorTotal ?>"/>
+        <input type="submit" value="Finalizar">
+    </form>
 </body>
 </html>
