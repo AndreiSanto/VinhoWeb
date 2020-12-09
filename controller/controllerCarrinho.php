@@ -11,32 +11,36 @@
         $id = $_REQUEST["id"];
         $preco = $_REQUEST["preco"];
 
-        //$bebida = $bebidasDao->getBebida($id);
+        $qtdEstoque = $bebidasDao->getBebida($id)->qde_estoque;
 
-        $itemCompra = new ItemCompra($id, $qtd, $preco);
-
-        session_start();
-        if(!isset($_SESSION["carrinho"])){
-            $carrinho = array();
-        }else{
-            $carrinho = $_SESSION["carrinho"];
-        }
-        foreach($carrinho as $registro){
-            if($registro->getIdBebida() == $id){
-                $dupl = true;
-                break;
+        if($qtd <= $qtdEstoque){
+            $itemCompra = new ItemCompra($id, $qtd, $preco);
+            session_start();
+            if(!isset($_SESSION["carrinho"])){
+                $carrinho = array();
             }else{
-                $dupl = false;
+                $carrinho = $_SESSION["carrinho"];
+            }
+            foreach($carrinho as $registro){
+                if($registro->getIdBebida() == $id){
+                    $dupl = true;
+                    break;
+                }else{
+                    $dupl = false;
+                }
+            }
+            if($dupl == false){
+                $carrinho[] = $itemCompra;
+                $_SESSION["carrinho"] = $carrinho;
+                header("location: ../restrito/exibirCarrinho.php");
+            }else{
+                header("location: ../restrito/exibirCarrinho.php");
             }
         }
-
-        if($dupl == false){
-            $carrinho[] = $itemCompra;
-            $_SESSION["carrinho"] = $carrinho;
-            header("location: ../restrito/exibirCarrinho.php");
-        }else{
-            header("location: ../restrito/exibirCarrinho.php");
+        else{
+            header("location: ../restrito/exibirCarrinhoErroQtd.php");
         }
+
     }
 
     else if($opcao == 2){
