@@ -17,7 +17,7 @@
         <p><a href="../controller/controllerCarrinho.php?opcao=3">Carrinho</a></p>
         <?php
             foreach($listaBebidas as $bebida){
-                echo "<table border='1' width='50%' cellspacing='5'>";
+                echo "<table width='50%' cellspacing='5'>";
                 echo "<tr>";
                 echo"<td rowspan='7' align='center'><img src='../image/drink_".$bebida->id_bebida.".png' width='200' height='200' border='0'/></td>";
                 echo "</tr>";

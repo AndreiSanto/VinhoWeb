@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exibir Carrinho</title>
 </head>
 <body>
     <div align="center">
@@ -31,10 +31,12 @@
                 <?php
                     $cont = 0;
                     $soma = 0;
+                    $peso = 0;
                     foreach($carrinho as $itemCompra){
                         $bebida = $bebidaDao->getBebida($itemCompra->getIdBebida());
                         $cont++;
-                        $soma = $soma + ($itemCompra->getValorItem() * $itemCompra->getQuantidade()); 
+                        $soma = $soma + ($itemCompra->getValorItem() * $itemCompra->getQuantidade());
+                        $peso = $peso + ($bebida->peso * $itemCompra->getQuantidade()); 
                         echo "<tr>";
                         echo "<td>".$cont."</td>";
                         echo "<td>".$itemCompra->getIdBebida()."</td>";
@@ -53,6 +55,7 @@
                 ?>
         </table>
         <a href="../controller/controllerOfertas.php?opcao=1">Continuar Comprando</a>
+        <a href="finalizarCompra-primeiroPasso.php?total=<?php echo $soma ?>&peso=<?php echo $peso ?>">Finalizar compra</a>
     </div>
 </body>
 </html>
