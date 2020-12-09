@@ -6,9 +6,9 @@
         private $valorTotal;
         private $valorFrete;
         
-        public function Compra($idCl,$dataC,$valorT,$valorF){
+        public function Compra($idCl, $valorT, $valorF){
             $this->idCliente = $idCl;
-            $this->dataCompra = $dataC;
+            //$this->dataCompra = $dataC;
             $this->valorTotal = $valorT;
             $this->valorFrete = $valorF;
         }
@@ -19,9 +19,9 @@
             return $this->dataCompra;
         }
         public function getValorTotal(){
-            $this->valorTotal;
+            return $this->valorTotal;
         }
-        public function getValorFrente(){
+        public function getValorFrete(){
            return $this->valorFrete;
         }
         public function getIdCompra(){

@@ -32,6 +32,8 @@
         <div>
             <input type="hidden" name="subTotal" value="<?php echo $subTotal ?>"/>
             <input type="hidden" name="peso" value="<?php echo $peso ?>"/>
+            <input type="hidden" name="idBebida" value="<?php echo $_REQUEST["idBebida"] ?>"/>
+            <input type="hidden" name="qtdItem" value="<?php echo $_REQUEST["qtd"] ?>"/>
         </div>
     </form>
     <p>Subtotal: <?php echo $subTotal ?></p>

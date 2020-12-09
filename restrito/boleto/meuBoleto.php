@@ -1,17 +1,19 @@
 <?php
 
+session_start();
+
 require 'autoloader.php';
 
 use OpenBoleto\Banco\BancoDoBrasil;
 use OpenBoleto\Agente;
 
-$sacado = new Agente($_REQUEST["bNome"], $_REQUEST["bCnpj"], $_REQUEST["bEndereco"], $_REQUEST["bCep"], $_REQUEST["bEstado"], $_REQUEST["bCidade"]);
+$sacado = new Agente($_SESSION["bNome"], $_SESSION["bCnpj"], $_SESSION["bEndereco"], $_SESSION["bCep"], $_SESSION["bEstado"], $_SESSION["bCidade"]);
 $cedente = new Agente('Distribuidora de bebidas LTDA', '02.123.123/0001-11', 'CLS 403 Lj 23', '71000-000', 'Alegre', 'ES');
 
 $boleto = new BancoDoBrasil(array(
     // Parâmetros obrigatórios
     'dataVencimento' => new DateTime('+5 days'),
-    'valor' => (float)$_REQUEST["total"],
+    'valor' => (float)$_SESSION["bValorTotal"],
     'sequencial' => 1234567,
     'sacado' => $sacado,
     'cedente' => $cedente,

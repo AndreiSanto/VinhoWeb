@@ -34,6 +34,14 @@
         $rs->bindValue(7,$bebida->getId_Bebida()); 
         $rs->execute();
      }
+
+     public function updateQtdBebida($idBebida, $qtd){
+        $rs = $this->con->prepare("UPDATE  bebidas SET qde_estoque=? WHERE id_bebida = ?"); 
+        $rs->bindValue(1,$qtd);
+        $rs->bindValue(2,$idBebida); 
+        $rs->execute();
+     }
+
      public function getBebidas(){
         $rs = $this->con->query("SELECT * FROM bebidas");
         $lista = array();

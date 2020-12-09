@@ -55,7 +55,7 @@
                 ?>
         </table>
         <a href="../controller/controllerOfertas.php?opcao=1">Continuar Comprando</a>
-        <a href="finalizarCompra-primeiroPasso.php?total=<?php echo $soma ?>&peso=<?php echo $peso ?>">Finalizar compra</a>
+        <a href="finalizarCompra-primeiroPasso.php?total=<?php echo $soma ?>&peso=<?php echo $peso ?>&qtd=<?php echo $itemCompra->getQuantidade()?>&idBebida=<?php echo $itemCompra->getIdBebida() ?>">Finalizar compra</a>
     </div>
 </body>
 </html>
