@@ -17,7 +17,7 @@
 
         $compra = New Compra($idCliente, $valorTotal, $valorFrete);
 
-        //$compraDao->insertCompra($compra);
+        $compraDao->insertCompra($compra);
         $qtd = $bebidaDao->getBebida($idBebida)->qde_estoque - $qtdItem; 
         $bebidaDao->updateQtdBebida($idBebida, $qtd);
 
