@@ -1,13 +1,20 @@
 <?php
     include_once "../dao/BebidasDao.php";
+    include_once "../model/ItemCompra.php";
 
     $opcao = (int)$_REQUEST["opcao"];
     $bebidasDao = new BebidasDao();
 
     if($opcao == 1){
         $dupl;
+        $qtd = $_REQUEST["qtd"];
         $id = $_REQUEST["id"];
-        $bebida = $bebidasDao->getBebida($id);
+        $preco = $_REQUEST["preco"];
+
+        //$bebida = $bebidasDao->getBebida($id);
+
+        $itemCompra = new ItemCompra($id, $qtd, $preco);
+
         session_start();
         if(!isset($_SESSION["carrinho"])){
             $carrinho = array();
@@ -15,7 +22,7 @@
             $carrinho = $_SESSION["carrinho"];
         }
         foreach($carrinho as $registro){
-            if($registro->id_bebida == $id){
+            if($registro->getIdBebida() == $id){
                 $dupl = true;
                 break;
             }else{
@@ -24,9 +31,8 @@
         }
 
         if($dupl == false){
-            $carrinho[] = $bebida;
+            $carrinho[] = $itemCompra;
             $_SESSION["carrinho"] = $carrinho;
-            $_SESSION["qtd"] = $qtd;
             header("location: ../restrito/exibirCarrinho.php");
         }else{
             header("location: ../restrito/exibirCarrinho.php");

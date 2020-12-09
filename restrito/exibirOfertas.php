@@ -22,23 +22,24 @@
                 echo"<td rowspan='7' align='center'><img src='../image/drink_".$bebida->id_bebida.".png' width='200' height='200' border='0'/></td>";
                 echo "</tr>";
                 echo "<tr>";
-                echo"<td>".$bebida->nome."</td>";
+                echo"<td>Descricao: ".$bebida->nome."</td>";
                 echo "</tr>";
                 echo "<tr>";
-                echo"<td>".$bebida->volume."</td>";
+                echo"<td>Volume:".$bebida->volume."</td>";
                 echo "</tr>";
                 echo "<tr>";
-                echo"<td>".$bebida->preco."</td>";
+                echo"<td>Preço:".$bebida->preco."</td>";
                 echo "</tr>";
                 echo "<tr>";
-                echo"<td>".$bebida->fabricante."</td>";
+                echo"<td>Fabricante:".$bebida->fabricante."</td>";
                 echo "</tr>";
                 echo "<td><form method='POST' action='../controller/controllerCarrinho.php'>
-                Quantidade: <input type='number' name='qtd' required>
-                <input type='submit' value='Adicionar ao carrinho'>
-                <input type='hidden' name='id' value='".$bebida->id_bebida."'>
-                <input type='hidden' name='opcao' value='1'>
-                </form></td>";
+                        Quantidade: <input type='number' name='qtd' required/>
+                        <input type='submit' value='Adicionar ao carrinho'/>
+                        <input type='hidden' name='id' value='".$bebida->id_bebida."'/>
+                        <input type='hidden' name='preco' value='".$bebida->preco."'/>
+                        <input type='hidden' name='opcao' value='1'/>
+                        </form></td>";
                 echo "<tr>";
                 echo "</tr>";
                 echo "</table>

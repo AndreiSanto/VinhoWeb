@@ -1,4 +1,8 @@
 <?php
+    require_once "../dao/BebidasDao.php";
+    require_once "../model/ItemCompra.php";
+
+    $bebidaDao = new BebidasDao();
     session_start();
     $carrinho = $_SESSION["carrinho"];
 ?>
@@ -20,21 +24,24 @@
                 <th>DESCRIÇÃO</th>
                 <th>VOLUME</th>
                 <th>PREÇO UN</th>
+                <th>QUANTIDADE</th>
                 <th>FABRICANTE</th>
                 <th>REMOVER</th>
             </tr>
                 <?php
                     $cont = 0;
                     $soma = 0;
-                    foreach($carrinho as $bebida){
+                    foreach($carrinho as $itemCompra){
+                        $bebida = $bebidaDao->getBebida($itemCompra->getIdBebida());
                         $cont++;
-                        $soma = $soma + $bebida->preco; 
+                        $soma = $soma + ($itemCompra->getValorItem() * $itemCompra->getQuantidade()); 
                         echo "<tr>";
                         echo "<td>".$cont."</td>";
-                        echo "<td>".$bebida->id_bebida."</td>";
+                        echo "<td>".$itemCompra->getIdBebida()."</td>";
                         echo "<td>".$bebida->nome."</td>";
                         echo "<td>".$bebida->volume."</td>";
                         echo "<td>".$bebida->preco."</td>";
+                        echo "<td>".$itemCompra->getQuantidade()."</td>";
                         echo "<td>".$bebida->fabricante."</td>";
                         echo "<td><a href='../controller/controllerCarrinho.php?opcao=2&indice=".$cont."'>remover</a></td>";
                         echo "</tr>";
