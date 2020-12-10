@@ -207,6 +207,26 @@ select:focus{
     outline: none;
 }
 
+input{
+    background-color: tomato;
+}
+
+/*Carrinho*/
+
+.carrinho{
+    padding: 40px;
+}
+
+table{
+    width: 100%;
+    border: none;
+}
+
+th, .total{
+    background-color: black;
+    color: silver;
+}
+
 /*MEDIA QUERY DO MENU*/ 
 
 @media only screen and (max-width: 800px){

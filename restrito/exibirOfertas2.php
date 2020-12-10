@@ -31,7 +31,7 @@
                             
                         </ul>    
                     </div>
-                    <a href="controller/controllerCarrinho.php?opcao=3"><img src="../images/carrinhoDeCompra.png" alt="Carrinho" width="30px" height="30px"></a>
+                    <a href="../controller/controllerCarrinho.php?opcao=3"><img src="../images/carrinhoDeCompra.png" alt="Carrinho" width="30px" height="30px"></a>
                     <img src="../images/menu-icon.png" alt="Menu" width="30px" height="30px" class="menu-icon">
                 </div>
 
@@ -52,9 +52,9 @@
                             echo "<img src='../image/drink_".$bebida->id_bebida.".png' alt='destaque' width='130px' height='150px'>";
                             echo "<h4>".$bebida->nome."</h4>";
                             echo "<p>R$".$bebida->preco.",00</p>";
-                            echo "<form method='POST' action='../controller/controllerCarrinho.php'>
-                                    Quantidade: <br><input type='number' name='qtd' required/><br>
-                                        <input type='submit' value='Adicionar ao carrinho'/>
+                            echo "<form method='POST' action='../controller/controllerCarrinho.php' class='form-1'>
+                                    Quantidade:<br><input type='number' name='qtd' required/><br>
+                                        <input type='submit' value='Adicionar ao carrinho' class='btn'/>
                                         <input type='hidden' name='id' value='".$bebida->id_bebida."'/>
                                         <input type='hidden' name='preco' value='".$bebida->preco."'/>
                                         <input type='hidden' name='opcao' value='1'/>
