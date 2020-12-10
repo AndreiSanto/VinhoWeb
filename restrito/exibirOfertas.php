@@ -34,7 +34,7 @@
                 echo"<td>Fabricante:".$bebida->fabricante."</td>";
                 echo "</tr>";
                 echo "<td><form method='POST' action='../controller/controllerCarrinho.php'>
-                        Quantidade: <input type='number' name='qtd' required/>
+                        Quantidade: <br><input type='number' name='qtd' required/><br>
                         <input type='submit' value='Adicionar ao carrinho'/>
                         <input type='hidden' name='id' value='".$bebida->id_bebida."'/>
                         <input type='hidden' name='preco' value='".$bebida->preco."'/>
