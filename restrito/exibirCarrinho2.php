@@ -29,9 +29,9 @@
                             <li><a href="../index.html">Inicio</a></li>
                             <li><a href="#">Noticias</a></li>
                             <li><a href="../controller/controllerOfertas.php?opcao=1">Bebidas</a></li>
-                            <li><a href="#">Sobre</a></li>
+                            <li><a href="../sobre.html">Sobre</a></li>
                             <li><a href="#">Contato</a></li>
-                            <li><a href="#">Usuario</a></li>
+                            <li><a href="../login.html">Usuario</a></li>
                             
                         </ul>    
                     </div>
@@ -94,8 +94,8 @@
                             <li><a href="#">Noticias</a></li>
                             <li><a href="../controller/controllerOfertas.php?opcao=1">Bebidas</a></li>
                             <li><a href="#">Contato</a></li>
-                            <li><a href="#">Usuario</a></li>
-                            <li><a href="#">Sobre</a></li>
+                            <li><a href="../login.html">Usuario</a></li>
+                            <li><a href="../sobre.html">Sobre</a></li>
                             <li><a href="../controller/controllerCarrinho.php?opcao=3">Carrinho</a></li>
                         </ul>
                     </div>

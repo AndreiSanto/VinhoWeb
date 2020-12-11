@@ -219,6 +219,25 @@ th, .total{
     color: silver;
 }
 
+.relatorio{
+    background-color: #bdbdbd;
+    
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.relatorio h2{
+    text-align: center;
+}
+
+.relatorio p{
+    text-align: justify;
+}
+
+.relatorio ul{
+    padding: 10px 20px;
+}
+
 /*Login*/
 
 .form-container{
