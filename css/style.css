@@ -238,6 +238,10 @@ th, .total{
     padding: 10px 20px;
 }
 
+.relatorio a{
+    color: #8a2222;
+}
+
 /*Login*/
 
 .form-container{
