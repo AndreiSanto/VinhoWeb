@@ -32,9 +32,9 @@
             if($dupl == false){
                 $carrinho[] = $itemCompra;
                 $_SESSION["carrinho"] = $carrinho;
-                header("location: ../restrito/exibirCarrinho.php");
+                header("location: ../restrito/exibirCarrinho2.php");
             }else{
-                header("location: ../restrito/exibirCarrinho.php");
+                header("location: ../restrito/exibirCarrinho2.php");
             }
         }
         else{
@@ -60,7 +60,7 @@
             header("location: ../restrito/carrinhoVazio.php");
         }
         else{
-            header("location: ../restrito/exibirCarrinho.php");
+            header("location: ../restrito/exibirCarrinho2.php");
         }
     }
 ?>

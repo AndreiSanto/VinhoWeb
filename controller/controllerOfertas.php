@@ -8,6 +8,6 @@
         $listaBebidas = $bebidasDao->getBebidas();
         session_start();
         $_SESSION["bebidas"] = $listaBebidas;
-        header("location: ../restrito/exibirOfertas.php");
+        header("location: ../restrito/exibirOfertas2.php");
     }
 ?>

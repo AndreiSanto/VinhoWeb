@@ -22,12 +22,12 @@
                     </div>
                     <div class="nav">
                         <ul>
-                            <li><a href="#">Inicio</a></li>
+                            <li><a href="../index.html">Inicio</a></li>
                             <li><a href="#">Noticias</a></li>
                             <li><a href="../controller/controllerOfertas.php?opcao=1">Bebidas</a></li>
                             <li><a href="#">Sobre</a></li>
                             <li><a href="#">Contato</a></li>
-                            <li><a href="#">Usuario</a></li>
+                            <li><a href="../login.html">Usuario</a></li>
                             
                         </ul>    
                     </div>
@@ -53,8 +53,8 @@
                             echo "<h4>".$bebida->nome."</h4>";
                             echo "<p>R$".$bebida->preco.",00</p>";
                             echo "<form method='POST' action='../controller/controllerCarrinho.php' class='form-1'>
-                                    Quantidade:<br><input type='number' name='qtd' required/><br>
-                                        <input type='submit' value='Adicionar ao carrinho' class='btn'/>
+                                    Quantidade:<br><input type='number' name='qtd' class='quantidade' required/><br>
+                                        <input type='submit' value='Adicionar ao carrinho' class='btn-oferta'/>
                                         <input type='hidden' name='id' value='".$bebida->id_bebida."'/>
                                         <input type='hidden' name='preco' value='".$bebida->preco."'/>
                                         <input type='hidden' name='opcao' value='1'/>
@@ -71,13 +71,13 @@
                     <div class="colunas-4">
                         <h3>Navegação</h3>
                         <ul>
-                            <li><a href="#">Principal</a></li>
+                            <li><a href="../index.html">Principal</a></li>
                             <li><a href="#">Noticias</a></li>
-                            <li><a href="controller/controllerOfertas.php?opcao=1">Bebidas</a></li>
+                            <li><a href="../controller/controllerOfertas.php?opcao=1">Bebidas</a></li>
                             <li><a href="#">Contato</a></li>
-                            <li><a href="#">Usuario</a></li>
+                            <li><a href="../login.html">Usuario</a></li>
                             <li><a href="#">Sobre</a></li>
-                            <li><a href="controller/controllerCarrinho.php?opcao=3">Carrinho</a></li>
+                            <li><a href="../controller/controllerCarrinho.php?opcao=3">Carrinho</a></li>
                         </ul>
                     </div>
                     <div class="colunas-4">

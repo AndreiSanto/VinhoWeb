@@ -50,6 +50,7 @@ a{
     /*border: red dotted;*/
     flex-wrap: wrap;
     justify-content: space-around;
+    padding-bottom: 40px;
 }
 
 .colunas{
@@ -87,6 +88,7 @@ a{
 
 .header{
     background: linear-gradient(#9D9C9C, #4F4F4F 90%);
+    min-height: 80vh;
 }
 
 .linha-2{
@@ -207,16 +209,6 @@ select:focus{
     outline: none;
 }
 
-input{
-    background-color: tomato;
-}
-
-/*Carrinho*/
-
-.carrinho{
-    padding: 40px;
-}
-
 table{
     width: 100%;
     border: none;
@@ -225,6 +217,53 @@ table{
 th, .total{
     background-color: black;
     color: silver;
+}
+
+/*Login*/
+
+.form-container{
+    background-color:#fff;
+    position: relative;
+    text-align: center;
+    padding: 20px 0px;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0px;
+}
+
+.form-container form{
+    max-width: 300px;
+    padding: 0px 20px;
+    top: 20px;
+}
+
+.form-container > form > input{
+    width: 100%;
+    height: 30px;
+    margin: 10px 0px;
+    border: 1px solid black;
+}
+
+.form-1 .quantidade{
+    width: 50px;
+    height: 30px;
+    margin: 10px 0px;
+    background: white;
+    border: 1px solid black;
+}
+
+.btn-oferta{
+    display: inline-block;
+    background-color: brown;
+    color: white;
+    margin: 10px 0px;
+    padding: 10px 10px;
+    border-radius: 40px;
+}
+
+.btn-oferta:hover{
+    transition: 0.4s;
+    background-color: black;
 }
 
 /*MEDIA QUERY DO MENU*/ 

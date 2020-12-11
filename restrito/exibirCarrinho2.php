@@ -26,7 +26,7 @@
                     </div>
                     <div class="nav">
                         <ul>
-                            <li><a href="#">Inicio</a></li>
+                            <li><a href="../index.html">Inicio</a></li>
                             <li><a href="#">Noticias</a></li>
                             <li><a href="../controller/controllerOfertas.php?opcao=1">Bebidas</a></li>
                             <li><a href="#">Sobre</a></li>
@@ -40,7 +40,7 @@
                 </div>
             </div>
 
-            <div class="container carrinho">
+            <div class="container" align="center">
                 <!--Carrinho aqui -->
                     <table align="center" cellspacing="1" cellpadding="5">
                         <tr>
@@ -78,7 +78,9 @@
                                 echo "<td colspan='8' align='center' >Total: ".$soma."</td>";
                                 echo "</tr>";
                             ?>
-                    </table>   
+                    </table> 
+                    <button class="btn-oferta" onclick="location.href='finalizarCompra-primeiroPasso.php?total=<?php echo $soma ?>&peso=<?php echo $peso ?>'">Finalizar Compra</button>
+                    <button class="btn-oferta" onclick="location.href='../controller/controllerOfertas.php?opcao=1'">Continuar Comprando</button> 
             </div>
         </div>
 
@@ -88,7 +90,7 @@
                     <div class="colunas-4">
                         <h3>Navegação</h3>
                         <ul>
-                            <li><a href="#">Principal</a></li>
+                            <li><a href="../index.html">Principal</a></li>
                             <li><a href="#">Noticias</a></li>
                             <li><a href="../controller/controllerOfertas.php?opcao=1">Bebidas</a></li>
                             <li><a href="#">Contato</a></li>
